@@ -6,14 +6,103 @@ including perspectives by:
     Time slot
     Individual course
 -->
-<!DOCTYPE timetable SYSTEM "timetable.dtd" [
-<!ENTITY dayview SYSTEM "DayOfWeek.xml">
-<!ENTITY timeview SYSTEM "timeslots.xml">
-<!ENTITY courseview SYSTEM "Course.xml">
-]>
+
+<!DOCTYPE timetable SYSTEM "timetable.dtd" >
 
 <timetable>
-    &dayview;
-    &timeview;
-    &courseview;
+    <dayofweek day = "thursday">
+        <class coursecode = "COMP4735" day = "thursday" starttime = "1130" endtime = "1230">
+            <room>SW3-1710</room>
+            <instructor>Mirela Gutica</instructor>
+        </class>
+        <class coursecode = "BLAW3600" day = "thursday" starttime = "1330" endtime = "1530">
+            <room>SW3-4725</room>
+            <instructor>Katherine Ryan</instructor>
+        </class>
+        <class coursecode = "COMP4711" day = "thursday" starttime = "1530" endtime = "1730">
+            <room>SE12-310</room>
+            <instructor>James Limburger Perry</instructor>
+        </class>
+    </dayofweek>
+    <!--
+    Timeslot view of COMP4B's schedule, including times: 830, 930, 1030, 1130
+    -->
+    <timeslot time="0830">
+        <class coursecode="COMP4932" day="monday" starttime="0830" endtime="1130">
+            <room>SE12-308</room>
+            <instructor>Dennis Richards</instructor>
+        </class>
+        <class coursecode="COMP4735" day="wednesday" starttime="0830" endtime="1030">
+            <room>SE12-308</room>
+            <instructor>Mathew Linder</instructor>
+        </class>
+        <class coursecode="BLAW3600" day="friday" starttime="0830" endtime="1030">
+            <room>SW5-1840</room>
+            <instructor>Catherine Ryan</instructor>
+        </class>
+    </timeslot>
+    <timeslot time="0930">
+        <class coursecode="COMP4932" day="monday" starttime="0830" endtime="1130">
+            <room>SE12-308</room>
+            <instructor>Dennis Richards</instructor>
+        </class>
+        <class coursecode="COMP4560" day="tuesday" starttime="0930" endtime="1130">
+            <room>SE12-320</room>
+            <instructor>Brenda Fine</instructor>
+        </class>
+        <class coursecode="COMP4735" day="wednesday" starttime="0830" endtime="1030">
+            <room>SE12-308</room>
+            <instructor>Mathew Linder</instructor>
+        </class>
+        <class coursecode="BLAW3600" day="friday" starttime="0830" endtime="1030">
+            <room>SW5-1840</room>
+            <instructor>Catherine Ryan</instructor>
+        </class>
+    </timeslot>
+    <timeslot time="1030">
+        <class coursecode="COMP4932" day="monday" starttime="0830" endtime="1130">
+            <room>SE12-308</room>
+            <instructor>Dennis Richards</instructor>
+        </class>
+        <class coursecode="COMP4560" day="tuesday" starttime="0930" endtime="1130">
+            <room>SE12-320</room>
+            <instructor>Brenda Fine</instructor>
+        </class>
+        <class coursecode="COMP4995" day="wednesday" starttime="1030" endtime="1130">
+            <room>SE12-308</room>
+            <instructor>Dennis Richards</instructor>
+        </class>
+    </timeslot>
+    <timeslot time="1130">
+        <class coursecode="COMP4735" day="monday" starttime="1130" endtime="1230">
+            <room>SW1-1205</room>
+            <instructor>Mirela Gutica</instructor>
+        </class>
+        <class coursecode="COMP4560" day="tuesday" starttime="1130" endtime="1230">
+            <room>SW5-1850</room>
+            <instructor>Brenda Fine</instructor>
+        </class>
+        <class coursecode="COMP4995" day="wednesday" starttime="1130" endtime="1230">
+            <room>SE12-308</room>
+            <instructor>Dennis Richards</instructor>
+        </class>
+        <class coursecode="COMP4735" day="thursday" starttime="1130" endtime="1230">
+            <room>SW3-1710</room>
+            <instructor>Mirela Gutica</instructor>
+        </class>
+    </timeslot>
+    <course coursecode = "COMP4560">
+        <class coursecode = "COMP4560" day = "tuesday" starttime="0930" endtime="1130">
+            <room>SE12-320</room>
+            <instructor>Brenda Fine</instructor>            
+        </class>  
+        <class coursecode = "COMP4560" day = "tuesday" starttime="1130" endtime="1230">
+            <room>SW5-1850</room>
+            <instructor>Brenda Fine</instructor>            
+        </class>
+        <class coursecode = "COMP4560" day = "friday" starttime="1230" endtime="1330">
+            <room>SW3-1750</room>
+            <instructor>Brenda Fine</instructor>            
+        </class>  
+    </course>
 </timetable>
