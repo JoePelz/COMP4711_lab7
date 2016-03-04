@@ -3,41 +3,50 @@
 Brian Livesey and Joe Pelz, and the case of the missing BCIT Timetable.
 -->
 
+<!-- timetable is the root element of a timetable xml file.  
+A timetable can be presented by day of the week, time slot, or by course -->
 <!ELEMENT timetable (dayofweek+|timeslot+|course+)>
 
+<!-- A container to collect classes for a particular day. -->
 <!ELEMENT dayofweek (class*)>
+<!-- The enumerated attribute day to specify which day is represented. -->
 <!ATTLIST dayofweek
-    day (monday|tuesday|wednesday|thursday|friday|saturday|sunday) #REQUIRED
->
-
-
-
-<!ELEMENT timeslot (class?)>
-<!ATTLIST timeslot
-    start (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
     day (monday|tuesday|wednesday|thursday|friday) #REQUIRED
 >
 
 
+<!-- A container to collect classes in a particular time slot. -->
+<!ELEMENT timeslot (class*)>
+<!-- Enumerated attributes of a time slot, 
+specifying the time in queestion. -->
+<!ATTLIST timeslot
+    time (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
+>
 
+
+<!-- A container to hold classes for a particular course. -->
 <!ELEMENT course (class+)>
+<!-- The enumerated attribute "coursecode" to specify which course to examine. -->
 <!ATTLIST course
     coursecode (BLAW3600|COMP4560|COMP4735|COMP4932|COMP4932|COMP4995|COMP4711) #REQUIRED
 >
 
-
+<!-- A timetable entry describing a particular class. -->
 <!ELEMENT class (room, instructor)>
+<!-- Enumarated attributes of a class, specifying 
+the course code, 
+the week day, 
+and the start and end times -->
 <!ATTLIST class
     coursecode (BLAW3600|COMP4560|COMP4735|COMP4932|COMP4932|COMP4995|COMP4711) #REQUIRED
     day (monday|tuesday|wednesday|thursday|friday) #REQUIRED
-    time (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
+    starttime (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
+    endtime (0930|1030|1130|1230|1330|1430|1530|1630|1730) #REQUIRED
 >
 
+<!-- The room a class takes place in. 
+Meant to be prefixed with building number, such as "SE12-310" -->
 <!ELEMENT room (#PCDATA)>
+<!-- The instructor for a particular class. -->
 <!ELEMENT instructor (#PCDATA)>
-
-
-
-
-
 
