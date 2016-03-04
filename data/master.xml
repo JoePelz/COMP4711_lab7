@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!--
+Combined view of COMP4B's schedule,
+including perspectives by:
+    Day of the week
+    Time slot
+    Individual course
+-->
+<!DOCTYPE timetable SYSTEM "timetable.dtd" [
+<!ENTITY dayview SYSTEM "DayOfWeek.xml">
+<!ENTITY timeview SYSTEM "timeslots.xml">
+<!ENTITY courseview SYSTEM "Course.xml">
+]>
+
+<timetable>
+    &dayview;
+    &timeview;
+    &courseview;
+</timetable>

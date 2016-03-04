@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-Timeslot view of COMP4B's schedule, including times: 830, 930, 1030, 1130
--->
-
-<!DOCTYPE timetable SYSTEM 'timetable.dtd'>
-
-<timetable>
+    <!--
+    Timeslot view of COMP4B's schedule, including times: 830, 930, 1030, 1130
+    -->
     <timeslot time="0830">
         <class coursecode="COMP4932" day="monday" starttime="0830" endtime="1130">
             <room>SE12-308</room>
@@ -70,4 +65,3 @@ Timeslot view of COMP4B's schedule, including times: 830, 930, 1030, 1130
             <instructor>Mirela Gutica</instructor>
         </class>
     </timeslot>
-</timetable>

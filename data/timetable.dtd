@@ -5,7 +5,7 @@ Brian Livesey and Joe Pelz, and the case of the missing BCIT Timetable.
 
 <!-- timetable is the root element of a timetable xml file.  
 A timetable can be presented by day of the week, time slot, or by course -->
-<!ELEMENT timetable (dayofweek+|timeslot+|course+)>
+<!ELEMENT timetable (dayofweek|timeslot|course)+>
 
 <!-- A container to collect classes for a particular day. -->
 <!ELEMENT dayofweek (class*)>
