@@ -1,0 +1,10 @@
+    <dayofweek day = "friday">
+        <class coursecode = "BLAW3600" day = "friday" starttime = "0830" endtime = "1030">
+            <room>SW5-1840</room>
+            <instructor>Katherine Ryan</instructor>
+        </class>
+        <class coursecode = "COMP4560" day = "friday" starttime = "1230" endtime = "1330">
+            <room>SW3-1750</room>
+            <instructor>Brenda Fine</instructor>
+        </class>
+    </dayofweek>
