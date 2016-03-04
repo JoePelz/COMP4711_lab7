@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Brian Livesey and Joe Pelz, and the case of the missing BCIT Timetable.
+-->
+
+<!ELEMENT timetable (dayofweek+|timeslot+|course+)>
+
+<!ELEMENT dayofweek (class*)>
+<!ATTLIST dayofweek
+    day (monday|tuesday|wednesday|thursday|friday|saturday|sunday) #REQUIRED
+>
+
+
+
+<!ELEMENT timeslot (class?)>
+<!ATTLIST timeslot
+    start (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
+    day (monday|tuesday|wednesday|thursday|friday) #REQUIRED
+>
+
+
+
+<!ELEMENT course (class+)>
+<!ATTLIST course
+    coursecode (BLAW3600|COMP4560|COMP4735|COMP4932|COMP4932|COMP4995|COMP4711) #REQUIRED
+>
+
+
+<!ELEMENT class (room, instructor)>
+<!ATTLIST class
+    coursecode (BLAW3600|COMP4560|COMP4735|COMP4932|COMP4932|COMP4995|COMP4711) #REQUIRED
+    day (monday|tuesday|wednesday|thursday|friday) #REQUIRED
+    time (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
+>
+
+<!ELEMENT room (#PCDATA)>
+<!ELEMENT instructor (#PCDATA)>
+
+
+
+
+
+
