@@ -1,6 +1,3 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -33,7 +30,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		margin: 0 0 14px 0;
 		padding: 14px 15px 10px 15px;
 	}
+        
+        h2 {
+            color: #444;
+            background-color: transparent;
+            border-bottom: 1px solid #D0D0D0;
+            font-size: 19px;
+            font-weight: normal;
+            margin: 14px 0 7px 0;
+        }
 
+        h3 {
+            margin: 0;
+        }
+        
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
@@ -63,25 +73,59 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+        
+        .class {
+            display: block;
+            background: #DEF;
+            margin: 0.1em 0.3em;
+            width: 12em;
+            height: 7em;
+            border: 1px solid black;
+            border-radius: 1em;
+            text-align: center;
+            padding: 1em;
+            float: left;
+        }
+        
+        .class p {
+            margin: 0;
+        }
+        .class p:first-child {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .class p:first-letter {
+            text-transform: capitalize;
+        }
+        
+        .clearing {
+            clear: both;
+        }
 	</style>
 </head>
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<h1>Timetable Scheduler Extraordinaire!</h1>
 
+        <div id="container">
+            <p>TODO: searching stuff in here</p>
+        </div>
+        
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+            <h2>Times Facet</h2>
+            {times}
+                {time}
+            {/times}
+            <h2>Days Facet</h2>
+            {days}
+                {day}
+            {/days}
+            <h2>Courses Facet</h2>
+            {courses}
+                {course}
+            {/courses}
 	</div>
-
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
