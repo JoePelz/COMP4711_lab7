@@ -1,7 +1,7 @@
 <div class="classes">
-    <h3>{blocktype}</h3>
-    {manyClasses}
+    <h3>{group_name}</h3>
+    {group_classes}
         {specificClass}
-    {/manyClasses}
+    {/group_classes}
     <div class="clearing"></div>
 </div>
