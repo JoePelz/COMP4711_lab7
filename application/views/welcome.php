@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>Timetable Organizer</title>
 
 	<style type="text/css">
 
@@ -110,6 +110,9 @@
         .class p:first-letter {
             text-transform: capitalize;
         }
+        .classes h3:first-letter {
+            text-transform: capitalize;
+        }
         
         .clearing {
             clear: both;
@@ -127,23 +130,11 @@
         </div>
         
 	<div id="body">
-            <h2>Times Facet</h2>
-            {times}
-                {time}
-            {/times}
-            <h2>Days Facet</h2>
-            {days}
-                {day}
-            {/days}
-            <h2>Courses Facet</h2>
-            {courses}
-                {course}
-            {/courses}
+            {timetable_facets}
+                {facet}
+            {/timetable_facets}
 	</div>
-	
-	<div id="result">
-	{searchresult}
-	</div>
+        
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
