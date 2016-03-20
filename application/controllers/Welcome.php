@@ -94,7 +94,7 @@ class Welcome extends CI_Controller {
         
 		
 		// Display form
-		$searchform = form_open('welcome');
+		$searchform = form_open('/welcome/search');
 		$searchform .= form_dropdown('days', $this->timetable->get_days());
 		$searchform .= form_dropdown('courses', $this->timetable->get_courses());
 		$searchform .= form_dropdown('slots', $this->timetable->get_timeslots());
