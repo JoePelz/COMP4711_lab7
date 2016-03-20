@@ -24,6 +24,12 @@ including perspectives by:
             <instructor>James Limburger Perry</instructor>
         </class>
     </dayofweek>
+	<dayofweek day = "friday">
+		<class coursecode = "COMP9999" day = "friday" starttime = "1630" endtime = "1730">
+            <room>SW5-1840</room>
+            <instructor>Dr. I.M. Faker</instructor>
+        </class>
+	</dayofweek>
     <!--
     Timeslot view of COMP4B's schedule, including times: 830, 930, 1030, 1130
     -->
@@ -91,6 +97,13 @@ including perspectives by:
             <instructor>Mirela Gutica</instructor>
         </class>
     </timeslot>
+	<timeslot time="1630">
+		<class coursecode = "COMP9999" day = "friday" starttime = "1630" endtime = "1730">
+            <room>SW5-1840</room>
+            <instructor>Dr. I.M. Faker</instructor>
+        </class>
+	</timeslot>
+	
     <course coursecode = "COMP4560">
         <class coursecode = "COMP4560" day = "tuesday" starttime="0930" endtime="1130">
             <room>SE12-320</room>
@@ -105,4 +118,10 @@ including perspectives by:
             <instructor>Brenda Fine</instructor>            
         </class>  
     </course>
+	<course coursecode = "COMP9999">
+		<class coursecode = "COMP9999" day = "friday" starttime = "1630" endtime = "1730">
+            <room>SW5-1840</room>
+            <instructor>Dr. I.M. Faker</instructor>
+        </class>
+	</course>
 </timetable>

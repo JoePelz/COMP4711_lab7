@@ -14,6 +14,18 @@
 		font: 13px/20px normal Helvetica, Arial, sans-serif;
 		color: #4F5155;
 	}
+	
+	.result {
+		background-color: #fff;
+		margin: 40px;
+		font: 13px/20px normal Helvetica, Arial, sans-serif;
+		color: #4F5155;
+	}
+	
+	.bingo {
+		font: 25px normal Helvetica, Arial, sans-serif;
+		color: red;
+	}
 
 	a {
 		color: #003399;
@@ -70,6 +82,7 @@
 
 	#container {
 		margin: 10px;
+		padding: 10px;
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
@@ -109,7 +122,8 @@
 	<h1>Timetable Scheduler Extraordinaire!</h1>
 
         <div id="container">
-            <p>TODO: searching stuff in here</p>
+		{searchform}
+		(Hint: For bingo use: Friday - COMP9999 - 1630)
         </div>
         
 	<div id="body">
@@ -125,6 +139,10 @@
             {courses}
                 {course}
             {/courses}
+	</div>
+	
+	<div id="result">
+	{searchresult}
 	</div>
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>

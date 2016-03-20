@@ -39,17 +39,75 @@ class Timetable extends CI_Model {
         }
     }
     
-    public function get_bookings_by_day() {
-        return $this->dayFacet;
+    public function get_bookings_by_day($day) {
+		if ($day == null) {
+			return $this->dayFacet;
+		} else {
+			$result = array();
+			foreach($this->dayFacet as $key => $val) {
+				if ($key == $day) {
+					$result[$key] = $val;
+				}
+			}
+			return $result;
+		}
     }
     
-    public function get_bookings_by_time() {
-        return $this->timeFacet;
+    public function get_bookings_by_time($slot) {
+		if ($slot == null) {
+			return $this->timeFacet;
+		} else {
+			$result = array();
+			foreach($this->timeFacet as $key => $val) {
+				if ($key == $slot) {
+					$result[$key] = $val;
+				}
+			}	
+			return $result;
+		}
     }
     
-    public function get_bookings_by_course() {
-        return $this->courseFacet;
+    public function get_bookings_by_course($course) {
+		if ($course == null) {
+			return $this->courseFacet;
+		} else {
+			$result = array();
+			foreach($this->courseFacet as $key => $val) {
+				if ($key == $course) {
+					$result[$key] = $val;
+				}
+			}
+			return $result;
+		}
     }
+	
+	
+	// Get codes for days/courses/timeslots for use in search drop-downs
+	public function get_days() {
+		$result = array();
+		foreach($this->dayFacet as $day => $contents) {
+			$result[(string)$day] = (string)$day;
+		}
+		return $result;
+	}
+	
+		public function get_courses() {
+		$result = array();
+		foreach($this->courseFacet as $course => $contents) {
+			$result[(string)$course] = (string)$course;
+		}
+		return $result;
+	}
+	
+		public function get_timeslots() {
+		$result = array();
+		foreach($this->timeFacet as $timeslot => $contents) {
+			$result[(string)$timeslot] = (string)$timeslot;
+		}
+		return $result;
+	}
+	
+	
 }
 
 class Booking {
