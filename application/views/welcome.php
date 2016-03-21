@@ -122,7 +122,7 @@
 <body>
 
 <div id="container">
-	<h1>Timetable Scheduler Extraordinaire!</h1>
+        <h1><a href="/">Timetable Scheduler Extraordinaire!</a></h1>
 
         <div id="container">
 		{searchform}

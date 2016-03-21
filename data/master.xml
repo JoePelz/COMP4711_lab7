@@ -10,6 +10,9 @@ including perspectives by:
 <!DOCTYPE timetable SYSTEM "timetable.dtd" >
 
 <timetable>
+    <!--
+    Day-of-the-week view of COMP4B's schedule, including times: Thursday, Friday
+    -->
     <dayofweek day = "thursday">
         <class coursecode = "COMP4735" day = "thursday" starttime = "1130" endtime = "1230">
             <room>SW3-1710</room>
@@ -24,12 +27,20 @@ including perspectives by:
             <instructor>James Limburger Perry</instructor>
         </class>
     </dayofweek>
-	<dayofweek day = "friday">
-		<class coursecode = "COMP9999" day = "friday" starttime = "1630" endtime = "1730">
+    <dayofweek day = "friday">
+        <class coursecode = "BLAW3600" day = "friday" starttime = "0830" endtime = "1030">
+            <room>SW5-1840</room>
+            <instructor>Catherine Ryan</instructor>
+        </class>
+        <class coursecode = "COMP4560" day = "friday" starttime = "1230" endtime = "1330">
+            <room>SW3-1750</room>
+            <instructor>Brenda Fine</instructor>
+        </class>
+        <class coursecode = "COMP9999" day = "friday" starttime = "1630" endtime = "1730">
             <room>SW5-1840</room>
             <instructor>Dr. I.M. Faker</instructor>
         </class>
-	</dayofweek>
+    </dayofweek>
     <!--
     Timeslot view of COMP4B's schedule, including times: 830, 930, 1030, 1130
     -->
@@ -97,13 +108,21 @@ including perspectives by:
             <instructor>Mirela Gutica</instructor>
         </class>
     </timeslot>
-	<timeslot time="1630">
-		<class coursecode = "COMP9999" day = "friday" starttime = "1630" endtime = "1730">
+    <timeslot time="1230">
+        <class coursecode="COMP4560" day="friday" starttime="1230" endtime="1330">
+            <room>SW3-1750</room>
+            <instructor>Brenda Fine</instructor>
+        </class>
+    </timeslot>
+    <timeslot time="1630">
+        <class coursecode = "COMP9999" day = "friday" starttime = "1630" endtime = "1730">
             <room>SW5-1840</room>
             <instructor>Dr. I.M. Faker</instructor>
         </class>
-	</timeslot>
-	
+    </timeslot>
+    <!--
+    Course view of COMP4B's schedule, only including COMP4560
+    -->
     <course coursecode = "COMP4560">
         <class coursecode = "COMP4560" day = "tuesday" starttime="0930" endtime="1130">
             <room>SE12-320</room>

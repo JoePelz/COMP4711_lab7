@@ -36,31 +36,6 @@ class Welcome extends MY_Controller {
         $this->create_searchform();
 
         $this->render();
-//        
-//        $timeFacet = $this->timetable->get_bookings_by_course(null, null);
-//        $day = "friday";
-//        $slot = "1630";
-//        $results = array();
-//        foreach($timeFacet as $key => $val) {
-//            foreach($val as $booking) {
-//                echo "<br>print_r booking <br>";
-//                print_r($booking);
-//                echo "<br>end print_r booking <br>";
-//                if (strcmp($booking->day, $day) == 0 && strcmp($booking->starttime, $slot) == 0) {
-//                    $results[] = $booking;
-//                }
-//            }
-//        }
-//        
-//        echo "<br>print_r results <br>";
-//        print_r($results);
-//        echo "<br>end print_r results <br>";
-//        
-//        $temp = $this->timetable->get_bookings_by_course("friday", "1630");
-//        
-//        echo "<br>print_r temp <br>";
-//        print_r($temp);
-//        echo "<br>end print_r temp <br>";
         
     }
     
@@ -85,14 +60,6 @@ class Welcome extends MY_Controller {
             && reset($courses)[0]->course == reset($times)[0]->course
             && reset($courses)[0]->course == reset($days)[0]->course) 
         {
-            // Well hot-damn ma; we gots us a bingo on our hands
-            $bingo = true;
-//            $group = array();
-//            $group["group_name"] = "widget";
-//            $group_classes = array();
-//            $group_classes[] = ["group" => $courses[0]];
-//            $group["group_classes"] = $group_classes;
-//            $this->data['facets'][] = array("facet_name" => "BINGO", "groups" => $group);
             $this->data['facets'][] = array("facet_name" => "BINGO", "groups" => $courses);
         } else {
             $this->data['facets'][] = array("facet_name" => "Search Results - Days Facet", "groups" => $days);
