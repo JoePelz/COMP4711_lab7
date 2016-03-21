@@ -29,14 +29,14 @@ class Welcome extends MY_Controller {
     
     public function index()
     {
-        $this->data['facets'][] = array("facet_name" => "Days Facet", "groups" => (array)$this->timetable->get_bookings_by_day(null));
-        $this->data['facets'][] = array("facet_name" => "Times Facet", "groups" => (array)$this->timetable->get_bookings_by_time(null));
-        $this->data['facets'][] = array("facet_name" => "Courses Facet", "groups" => (array)$this->timetable->get_bookings_by_course(null));
+        $this->data['facets'][] = array("facet_name" => "Days Facet", "groups" => (array)$this->timetable->get_bookings_by_day(null, null));
+        $this->data['facets'][] = array("facet_name" => "Times Facet", "groups" => (array)$this->timetable->get_bookings_by_time(null, null));
+        $this->data['facets'][] = array("facet_name" => "Courses Facet", "groups" => (array)$this->timetable->get_bookings_by_course(null, null));
 
         $this->create_searchform();
 
-        //$this->parser->parse('welcome', $this->data);
         $this->render();
+        
     }
     
     
@@ -49,19 +49,17 @@ class Welcome extends MY_Controller {
         $courses_search = $this->input->post('courses');
         $slots_search = $this->input->post('slots');
 
-        $times = (array)$this->timetable->get_bookings_by_time($slots_search);
-        $days = (array)$this->timetable->get_bookings_by_day($days_search);
-        $courses = (array)$this->timetable->get_bookings_by_course($courses_search);
+        $times = (array)$this->timetable->get_bookings_by_time($days_search, $slots_search);
+        $days = (array)$this->timetable->get_bookings_by_day($days_search, $slots_search);
+        $courses = (array)$this->timetable->get_bookings_by_course($days_search, $slots_search);
 
         // Check for search 'bingo' in a long, protracted, drawn-out and ugly way
-        if (sizeof($courses[$courses_search]) == 1
-            && sizeof($times[$slots_search]) == 1
-            && sizeof($days[$days_search]) == 1
-            && $courses[$courses_search][0]->course == $times[$slots_search][0]->course
-            && $courses[$courses_search][0]->course == $days[$days_search][0]->course) 
+        if (sizeof($courses) == 1
+            && sizeof($times) == 1
+            && sizeof($days) == 1
+            && reset($courses)[0]->course == reset($times)[0]->course
+            && reset($courses)[0]->course == reset($days)[0]->course) 
         {
-            // Well hot-damn ma; we gots us a bingo on our hands
-            $bingo = true;
             $this->data['facets'][] = array("facet_name" => "BINGO", "groups" => $courses);
         } else {
             $this->data['facets'][] = array("facet_name" => "Search Results - Days Facet", "groups" => $days);
@@ -78,8 +76,10 @@ class Welcome extends MY_Controller {
         // Display form
         $searchform = form_open('/welcome/search');
         $searchform .= form_dropdown('days', $this->timetable->get_days());
-        $searchform .= form_dropdown('courses', $this->timetable->get_courses());
         $searchform .= form_dropdown('slots', $this->timetable->get_timeslots());
+        //We don't need to filter by courses. Just by time and day.
+        //...but we could do so easily.
+        //$searchform .= form_dropdown('courses', $this->timetable->get_courses());
         $searchform .= form_submit('searchbutton', 'Search');
         $searchform .= form_close();
 
